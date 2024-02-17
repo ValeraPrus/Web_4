@@ -8,6 +8,7 @@ from datetime import datetime
 from pathlib import Path
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
+
 BASE_DIR = Path()
 BUFFER_SIZE = 1024
 HTTP_PORT = 3000
@@ -68,7 +69,7 @@ def save_data(data):
 
         with open('storage/data.json', 'r', encoding='utf-8') as file:
             path = Path('storage/data.json')
-            if path.stat().st_size == 0: #check if file is empty
+            if path.stat().st_size == 0:
                 parse_dict_time = {str(datetime.now()): parse_dict_message}
             else:
                 parse_dict_time = json.load(file)
